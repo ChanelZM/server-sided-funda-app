@@ -1,0 +1,305 @@
+/* ALGEMEEN */
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Avenir', 'Al Tarikh', serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0.5rem 0 0 0;
+    padding: 0 0.8rem;
+}
+
+h3 {
+    margin: 0 0 0.4rem;
+}
+
+body > section > * {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60rem;
+}
+
+form > section {
+    margin: 0.8rem 0;
+}
+
+select {
+    background-color: white;
+    border-radius: 0;
+    padding: 0 0.8rem;
+}
+
+button {
+    background: #0071B3;
+    border: none;
+    color: white;
+    font-size: 1em;
+    padding: 1rem;
+    transition: background 0.2s ease;
+}
+
+button:focus, button:hover {
+    background: #F7A100;
+    outline: 0;
+}
+
+input:focus, select:focus, a:focus {
+    outline-color: #0071B3;
+}
+
+input[type="number"], input[type="text"], select {
+    display: block;
+    font-size: 1em;
+    font-weight: lighter;
+    height: 2rem;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+input[type="number"], input[type="text"] {
+    box-sizing: border-box;
+}
+
+.kamers input[type="number"], select {
+    border-bottom: 1px solid #E6F2F7;
+    border-left: white;
+    border-right: white;
+    border-top: 1px solid #E6F2F7;
+    margin-bottom: 0.8rem;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+}
+
+input[type="radio"] + label::before {
+    background-color: #E6F2F7;
+    border: 1px solid #0071B3;
+    border-radius: 10px;
+    content: '\a0';
+    display: inline-block;
+    height: 18px;
+    line-height: 1em;
+    margin: 0 0.5rem 0 0.8rem;
+    text-align: center;
+    transition: background-color 0.4s ease;
+    width: 18px;
+}
+
+input[type="radio"]:checked + label::before {
+    background-color: #0071B3;
+    color: #0071B3;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #E6F2F7;
+}
+
+input[type="radio"] + label {
+    border-top: 1px solid #E6F2F7;
+    padding: 0.5rem 0;
+}
+
+input[type="radio"] + label:last-of-type {
+    border-bottom: 1px solid #E6F2F7;
+}
+
+.hidden {
+    display: none;
+}
+
+/* HEADER */
+header {
+    background-color: #F7A100;
+    display: inline-block;
+}
+
+header a {
+    display: inline-block;
+}
+
+header img {
+    height: 2rem;
+    margin-left: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+/* ZOEKEN */
+.locatie {
+    background-color: #F7A100;
+    color: white;
+    padding: 0.8rem;
+}
+
+#zoekbalk h1 {
+    background-color: #E6F2F7;
+    background-image: url('../img/boerderij-silhouet.svg');
+    background-position: 0% 120%;; 
+    background-repeat: no-repeat;
+    background-size: 135%;
+    color: #53241B;
+    font-weight: lighter;
+    height: 10rem;
+    padding: 0 0.8rem;
+    padding-top: 3rem;
+}
+
+.type {
+    display: flex;
+    flex-direction: column;
+}
+
+.zoekwoning {
+    /*bottom: 0;*/
+    /*position: fixed;*/
+    width: 100%;
+}
+
+.type > *, .prijs > *, .kamers > * {
+    padding: 0 0.8rem;
+}
+
+.kamers label, .kamers input, .prijs label {
+    padding: 0 0.8rem;
+}
+
+/* ZOEKRESULTATEN */
+.houses, .ookinteressant {
+    padding: 0 0.8rem;
+}
+
+.ookinteressant {
+    background-color: #E6F2F7;
+    display: flex;
+    flex-direction: column;
+}
+
+.houses .house:not(:last-child) {
+    border-bottom: 1px solid #E6F2F7;
+    margin-bottom: 1rem;
+}
+
+.ookinteressant .house:not(:last-child) {
+    border-bottom: 1px solid #0071B3;
+    margin-bottom: 1rem;
+}
+
+.house p, .price-wrapper {
+    margin: 0.5rem 0 0 0;
+}
+
+.pictureofhouse {
+    width: 100%;
+}
+
+.ookinteressant .house p:last-child, .houses .house p:last-child  {
+    margin-bottom: 0.5rem;
+}
+
+.streetandnumber {
+    color: #0071B3;
+}
+
+.price-wrapper {
+    font-weight: bold;
+}
+
+.ookinteressant .price-wrapper {
+    background-color: #F7A100;
+    color: white;
+    display: inline-block;
+    padding: 0.2rem;
+}
+
+.ookinteressant span.price::before {
+    content: '\00d7';
+    padding-right: 0.5em;
+}
+
+.livingarea, .rooms {
+    background-color: #ACC700;
+    color: white;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    padding: 0.2rem;
+}
+
+.livingarea::before, .rooms::before {
+    content: '\2713';
+    margin-right: 0.5rem;
+}
+
+.ookinteressant p.rooms {
+    margin-right: 10em;
+}
+
+/* ERROR */
+#error {
+    background-color: #E6F2F7;
+    padding: 0 0.8rem;
+}
+
+/* LOADER */
+#loadingscreen {
+    background-color: rgba(255, 255, 255, 0.8);
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.loader {
+    animation: loader 700ms infinite steps(18);
+    background: url('../img/spinner.svg') 0 0;
+    height: 100px;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    overflow: hidden;
+    position: fixed;
+    text-indent: 200%;
+    top: 50%;
+    white-space: nowrap;
+    width: 100px;
+}
+
+@keyframes loader {
+    to {background-position: -1800px 0;}
+}
+
+/* PAGINATION */
+.pagination {
+    margin: 1rem;
+    text-align: center;
+}
+
+.pagination a {
+    color: #0071B3;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+    background-color: #EDEDED;
+    padding: 0.8rem;
+}
+
+footer > h4, footer > p {
+    margin: 0.1rem 0;
+}
+
+footer a, footer a:visited {
+    color: #0071B3;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 29rem){
+    
+}

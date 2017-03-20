@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Zoek mijn droomhuis</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+  <header>
+      <a href="./index.html"><img src="./img/fundawonen-logo.svg" alt="Funda logo" /></a>
+  </header>
+   <section id="zoekbalk">
+      <h1>Dagelijks een eitje van eigen kippen</h1>
+       <form class="zoeken">
+          <section class="locatie">
+              <h3>Locatie</h3>
+               <label for="location">Plaats, buurt of adres</label>
+               <input type="text" name="location" id="location" />
+           </section>
+           <section class="type">
+               <h3>Type</h3>
+               <input type="radio" name="type" value="koop" id="koop" checked />
+               <label for="koop">Koop</label>
+               <input type="radio" name="type" value="huur" id="huur"/>
+               <label for="huur">Huur</label>
+               <input type="radio" name="type" value="nieuwbouw" id="nieuwbouw"/>
+               <label for="nieuwbouw">Nieuwbouw</label>
+           </section>
+           <section class="prijs">
+               <h3>Prijs</h3>
+               <label for="min-prijs">Van</label>
+               <select id="min-prijs">
+                   <option value="0">€0</option>
+                   <option value="100000">€100 000</option>
+                   <option value="200000">€200 000</option>
+                   <option value="300000">€300 000</option>
+                   <option value="400000">€400 000</option>
+                   <option value="500000">€500 000</option>
+               </select>
+               <label for="max-prijs">Tot</label>
+               <select id="max-prijs">
+                   <option value="100000">€100 000</option>
+                   <option value="200000">€200 000</option>
+                   <option value="300000">€300 000</option>
+                   <option value="400000">€400 000</option>
+                   <option value="500000">€500 000</option>
+                   <option value="600000">€600 000</option>
+                   <option value="700000">€700 000</option>
+                   <option value="800000">€800 000</option>
+                   <option value="900000">€900 000</option>
+                   <option value="1000000">€1 000 000</option>
+               </select>
+           </section>
+           <section class="kamers">
+               <h3>Kamers</h3>
+               <label for="minkamers">Van</label>
+               <input type="number" min="1" max="10" name="aantalkamers" id="minkamers" placeholder="minimum aantal kamers" />
+               <label for="maxkamers">Tot</label>
+               <input type="number" min="1" max="10" name="aantalkamers" id="maxkamers" placeholder="maximum aantal kamers" />
+           </section>
+           <button class="zoekwoning">Zoeken</button>
+       </form>
+   </section>
+   <section id="zoekresultaten" hidden>
+       <h1>Zoekresultaten</h1>
+       <section class="houses">
+        <h2 class="hidden">Huizen</h2>
+         <div>
+          <section class="house">
+              <img class="pictureofhouse" src="img/fundawonen-logo.svg" alt="Foto van huis" />
+               <h3 class="streetandnumber">Address</h3>
+               <p class="zipcodeandcity">Zipcode</p>
+               <p class="price">Price</p>
+               <p class="livingareaandrooms">Living area</p>
+           </section>
+           </div>
+       </section>
+       <section class="ookinteressant">
+           <h2>Misschien ook leuk?</h2>
+           <div>
+          <section class="house">
+              <img class="pictureofhouse" src="img/fundawonen-logo.svg" alt="Foto van huis" />
+               <h3 class="streetandnumber">Address</h3>
+               <p class="zipcodeandcity">Zipcode</p>
+               <p class="price">Price</p>
+               <p class="livingarea">Living area</p>
+               <p class="rooms">Rooms</p>
+           </section>
+           </div>
+       </section>
+       <nav class="pagination">
+        
+         <a href="/"><span>&#8249;</span>Vorige</a>
+          <span>Pagina 1</span>
+           <a href="/">Volgende<span>&#8250;</span></a>
+       </nav>
+   </section>
+   <footer>
+       <h4>English</h4>
+       <p><a href="/">Funda in english</a></p>
+   </footer>
+   <section id="error" hidden>
+       <h3>Message</h3>
+   </section>
+   <section id="loadingscreen" hidden>
+      <h2 class="hidden">Loader</h2>
+       <div class="loader"></div>
+   </section>
+   <script src="config.js"></script>
+   <script src="./node_modules/transparency/dist/transparency.min.js"></script>
+   <script src="js/routie.js"></script>
+   <script src="./node_modules/aja/aja.min.js"></script>
+   <script src="js/script.js"></script>
+</body>
+</html>

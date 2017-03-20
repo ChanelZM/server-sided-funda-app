@@ -1,0 +1,19 @@
+{
+  "name": "project1_funda",
+  "version": "1.0.0",
+  "description": "echo # project1_funda",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChanelZM/project1_funda.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChanelZM/project1_funda/issues"
+  },
+  "homepage": "https://github.com/ChanelZM/project1_funda#readme"
+}
