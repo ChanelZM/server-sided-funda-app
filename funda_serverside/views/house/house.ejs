@@ -1,0 +1,49 @@
+<%- include('../partials/head.ejs') %>
+
+<section id="detailpagina">
+    <h1 class="streetandnumber"><%= house.Adres %></h1>
+    <p class="zipcodeandcity"><%= house.Postcode %> <%= house.Woonplaats || house.Plaats %></p>
+    <p class="price"><%- house.PrijsGeformatteerdHtml || house.PrijsGeformatteerd %></p>
+    <img class="pictureofhouse" src="<%= house.FotoLarge || house.HoofdFoto %>" />
+    <h2>Omschrijving</h2>
+    <p class="description"><%= house.VolledigeOmschrijving %></p>
+    <section>
+        <h2>Kenmerken</h2>
+        <section>
+            <h3>Overdracht</h3>
+            <h5>Vraagprijs</h5>
+            <p class="price"><%- house.PrijsGeformatteerdHtml || house.PrijsGeformatteerd %></p>
+            <h5>Aangeboden sinds</h5>
+            <p><%= house.AangebodenSindsTekst %></p>
+            <h5>Status</h5>
+            <p><%= house.VerkoopStatus %></p>
+            <h5>Aanvaarding</h5>
+            <p><%= house.Aanvaarding %></p>
+        </section>
+        <section>
+            <h3>Bouw</h3>
+            <h5>Soort woonhuis</h5>
+            <p><%= house.SoortWoning %></p>
+            <h5>Soort bouw</h5>
+            <p><%= house.Bouwvorm %></p>
+            <h5>Bouwjaar</h5>
+            <p><%= house.Bouwjaar %></p>
+            <h5>Specifiek</h5>
+            <p><%= house.Bijzonderheden %></p>
+        </section>
+        <section>
+            <h3>Oppervlakten en inhoud</h3>
+            <section>
+                <h4>Gebruiksoppervlakten</h4>
+                <h5>Woonoppervlakte</h5>
+                <p><%= house.WoonOppervlakte || 0 %> m2</p>
+            </section>
+            <h5>Perceeloppervlakte</h5>
+            <p><%= house.PerceelOppervlakte %></p>
+            <h5>Inhoud</h5>
+            <p><%= house.Inhoud %></p>
+        </section>
+    </section>
+</section>
+
+<%- include('../partials/foot.ejs') %>

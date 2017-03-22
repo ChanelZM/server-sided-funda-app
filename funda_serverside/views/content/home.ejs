@@ -1,0 +1,55 @@
+<%- include('../partials/head.ejs') %>
+<section id="zoekbalk">
+      <h1>Dagelijks een eitje van eigen kippen</h1>
+       <form class="zoeken" action="/" method="post" enctype="multipart/form-data">
+          <section class="locatie">
+              <h3>Locatie</h3>
+               <label for="location">Plaats, buurt of adres</label>
+               <input type="text" name="location" id="location" />
+           </section>
+           <section class="type">
+               <h3>Type</h3>
+               <input type="radio" name="type" value="koop" id="koop" checked />
+               <label for="koop">Koop</label>
+               <input type="radio" name="type" value="huur" id="huur"/>
+               <label for="huur">Huur</label>
+               <input type="radio" name="type" value="nieuwbouw" id="nieuwbouw"/>
+               <label for="nieuwbouw">Nieuwbouw</label>
+           </section>
+           <section class="prijs">
+               <h3>Prijs</h3>
+               <label for="min-prijs">Van</label>
+               <select id="min-prijs" name="minprijs">
+                   <option value="0">€0</option>
+                   <option value="100000">€100 000</option>
+                   <option value="200000">€200 000</option>
+                   <option value="300000">€300 000</option>
+                   <option value="400000">€400 000</option>
+                   <option value="500000">€500 000</option>
+               </select>
+               <label for="max-prijs">Tot</label>
+               <select id="max-prijs" name="maxprijs">
+                   <option value="100000">€100 000</option>
+                   <option value="200000">€200 000</option>
+                   <option value="300000">€300 000</option>
+                   <option value="400000">€400 000</option>
+                   <option value="500000">€500 000</option>
+                   <option value="600000">€600 000</option>
+                   <option value="700000">€700 000</option>
+                   <option value="800000">€800 000</option>
+                   <option value="900000">€900 000</option>
+                   <option value="1000000">€1 000 000</option>
+               </select>
+           </section>
+           <section class="kamers">
+               <h3>Kamers</h3>
+               <label for="minkamers">Van</label>
+               <input type="number" min="1" max="10" name="minkamers" id="minkamers" placeholder="minimum aantal kamers" />
+               <label for="maxkamers">Tot</label>
+               <input type="number" min="1" max="10" name="maxkamers" id="maxkamers" placeholder="maximum aantal kamers" />
+           </section>
+           <button type="submit" class="zoekwoning">Zoeken</button>
+       </form>
+   </section>
+
+<%- include('../partials/foot.ejs') %>
