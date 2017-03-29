@@ -43,13 +43,18 @@ function renderAutosuggest(data){
     autocompleteList.innerHTML += '<li>' + data.Results[i].Display.Naam + '</li>';
   }
 
-  console.log(document.querySelector('#location').value);
   if(!document.querySelector('#location').value){
     document.querySelector('.autocompletelist').style.display = "none";
   } else{
     document.querySelector('.autocompletelist').style.display = "block";
   }
 }
+
+document.querySelector('.autocompletelist > ul').addEventListener('click', function(e){
+  document.querySelector('.autocompletelist').style.display = "none";
+  document.querySelector('#location').value = e.target.innerHTML;
+  //console.log(e.target.innerHTML);
+});
 
 },{}],2:[function(require,module,exports){
 var autocomplete = require('./autocomplete.js');
