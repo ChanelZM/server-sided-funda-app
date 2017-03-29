@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon funda_serverside/app.js"
+    "start": "npm run build && nodemon funda_serverside/app.js",
+    "build": "browserify funda_serverside/public/js/enhance.js -o funda_serverside/public/js/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/ChanelZM/server-sided-funda-app#readme",
   "dependencies": {
+    "aja": "^0.4.1",
     "body-parser": "^1.17.1",
     "db": "^1.0.6",
     "dotenv": "^4.0.0",
@@ -30,5 +32,9 @@
     "nodemon": "^1.11.0",
     "path": "^0.12.7",
     "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "watchify": "^3.9.0"
   }
 }

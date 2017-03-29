@@ -6,6 +6,10 @@
               <h3>Locatie</h3>
                <label for="location">Plaats, buurt of adres</label>
                <input type="text" name="location" id="location" />
+               <div class="autocompletelist">
+                 <ul>
+                 </ul>
+               </div>
            </section>
            <section class="type">
                <h3>Type</h3>
@@ -29,6 +33,7 @@
                </select>
                <label for="max-prijs">Tot</label>
                <select id="max-prijs" name="maxprijs">
+                   <option value="Geen maximum">Geen maximum</option>
                    <option value="100000">€100 000</option>
                    <option value="200000">€200 000</option>
                    <option value="300000">€300 000</option>

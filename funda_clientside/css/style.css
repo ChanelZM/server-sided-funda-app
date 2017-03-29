@@ -139,7 +139,7 @@ header img {
 #zoekbalk h1 {
     background-color: #E6F2F7;
     background-image: url('../img/boerderij-silhouet.svg');
-    background-position: 0% 120%;; 
+    background-position: 0% 120%;;
     background-repeat: no-repeat;
     background-size: 135%;
     color: #53241B;
@@ -301,5 +301,5 @@ footer a, footer a:visited {
 }
 
 @media screen and (min-width: 29rem){
-    
+
 }

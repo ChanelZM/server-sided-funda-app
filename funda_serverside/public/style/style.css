@@ -138,12 +138,13 @@ header img {
     background-color: #F7A100;
     color: white;
     padding: 0.8rem;
+    position: relative;
 }
 
 #zoekbalk h1 {
     background-color: #E6F2F7;
     background-image: url('../img/boerderij-silhouet.svg');
-    background-position: 0% 120%;; 
+    background-position: 0% 120%;;
     background-repeat: no-repeat;
     background-size: 135%;
     color: #53241B;
@@ -170,6 +171,25 @@ header img {
 
 .kamers label, .kamers input, .prijs label {
     padding: 0 0.8rem;
+}
+
+.autocompletelist {
+  background-color: white;
+  border: 1px solid #dddddd;
+  color: black;
+  display: none;
+  position: absolute;
+  right: 0.8rem;
+  left: 0.8rem;
+
+}
+
+.autocompletelist li {
+  padding: 0.3rem 0;
+}
+
+.autocompletelist li:not(:last-child) {
+  border-bottom: 1px solid #E6F2F7;
 }
 
 /* ZOEKRESULTATEN */
@@ -340,5 +360,5 @@ footer a, footer a:visited {
 }
 
 @media screen and (min-width: 29rem){
-    
+
 }

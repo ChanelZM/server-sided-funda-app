@@ -1,20 +1,38 @@
 <%- include('../partials/head.ejs') %>
 
 <section id="zoekresultaten">
-    <h1>Resultaten</h1>
-    <section class="houses">
-       <div>
-            <% houses.forEach(function(house){%>
-            <section class="house">
-                <img class="pictureofhouse" src="<%= house.FotoLarge || house.HoofdFoto;%>" />
-                <h3><a href="/house/<%= house.Id %>" class="streetandnumber"><%= house.Adres%></a></h3>
-                <p class="zipcodeandcity"><%= house.Postcode%> <%= house.Woonplaats || house.Plaats;%></p>
-                <p class="price"><%- house.PrijsGeformatteerdHtml || house.PrijsGeformatteerd; %></p>
-                <p class="livingareaandrooms"><%= house.Woonoppervlakte || house.Perceeloppervlakte || ''%> m2 ● <%= house.AantalKamers + ' kamers' %></p>
-            </section>
-            <% }) %>
-        </div>
+  <h1>Resultaten</h1>
+  <section class="houses">
+    <div>
+    <% houses.forEach(function(house){%>
+      <section class="house">
+        <img class="pictureofhouse" src="<%= house.FotoLarge || house.HoofdFoto;%>" />
+        <h3><a href="/house/<%= house.Id %>" class="streetandnumber"><%= house.Adres%></a></h3>
+        <p class="zipcodeandcity"><%= house.Postcode%> <%= house.Woonplaats || house.Plaats;%></p>
+        <p class="price"><%- house.PrijsGeformatteerdHtml || house.PrijsGeformatteerd; %></p>
+        <p class="livingareaandrooms"><%= house.Woonoppervlakte || house.Perceeloppervlakte || ''%> m2 ● <%= house.AantalKamers + ' kamers' %></p>
+      </section>
+      <% }) %>
+    </div>
+  </section>
+  <%if(teaseHouses == "undefined"){ %>
+  <% } else{%>
+    <section class="ookinteressant">
+      <h2>Misschien ook leuk?</h2>
+      <div>
+      <% teaseHouses.forEach(function(house){ %>
+        <section class="house">
+          <img class="pictureofhouse" src="<%= house.FotoLarge || house.HoofdFoto; %>" />
+          <h3><a href="/house/<%= house.Id %>" class="streetandnumber"><%= house.Adres%></a></h3>
+          <p class="zipcodeandcity"><%= house.Postcode%> <%= house.Woonplaats || house.Plaats;%></p>
+          <p class="price"><%- house.PrijsGeformatteerdHtml || house.PrijsGeformatteerd; %></p>
+          <p class="livingarea"><%= house.Woonoppervlakte || house.Perceeloppervlakte || ''%> m2</p>
+          <p class="rooms"><%= house.AantalKamers + ' kamers' %></p>
+        </section>
+      <% }) %>
+      </div>
     </section>
+    <% } %>
 </section>
 
 <%- include('../partials/foot.ejs') %>
