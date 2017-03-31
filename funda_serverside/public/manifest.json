@@ -1,0 +1,16 @@
+{
+    "short_name": "Funda",
+    "name": "Funda",
+    "start_url": "/?homescreen=1",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "#F7A100",
+    "background_color": "#FFFFFF",
+    "icons": [
+        {
+            "src": "/img/fundawonen-logo.svg",
+            "sizes": "250x250",
+            "type": "image/svg"
+        }
+    ]
+}

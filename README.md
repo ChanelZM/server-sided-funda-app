@@ -1,6 +1,6 @@
 # Server Sided Funda app
 ## Introduction
-In one of my other repositories (the one you can't see because it's private. I made a copy [Funda Client side](https://github.com/ChanelZM/server-sided-funda-app/tree/master/funda_clientside)) I made a Single Page Webapplication based on client-sided JavaScript. It worked fine on mobile although one problem can occur when you're using client-sided JS: your SPA may fail from time to time because JS is failing. Now why would JS fail? For numerous reasons such as: your user has JS turned off and your internet connection fails between loading html and js (more reasons [here](https://kryogenix.org/code/browser/everyonehasjs.html)). Booom! Your SPA just broke.
+In one of my other repositories (the one you can't see because it's private. I made a copy [Funda Client side](https://github.com/ChanelZM/server-sided-funda-app/tree/master/funda_clientside) I made a Single Page Webapplication based on client-sided JavaScript. It worked fine on mobile although one problem can occur when you're using client-sided JS: your SPA may fail from time to time because JS is failing. Now why would JS fail? For numerous reasons such as: your user has JS turned off and your internet connection fails between loading html and js (more reasons [here](https://kryogenix.org/code/browser/everyonehasjs.html). Booom! Your SPA just broke.
 
 So what now? How are we going to build an SPA without depending on client-sided JS? You use the server. And we are in luck, because we have Node.js, server-sided JS, to help us with this job. So basically what I did is create a SPA that is written in Node.js and I'm going to tell you all about it in this readme.
 
@@ -67,3 +67,47 @@ res.render('results/result', {
 ```
 
 ## Performance
+### Smaller pictures
+#### How it was
+The app first had big images loaded which made loading time longer.
+
+###### The code
+```html
+<img class="pictureofhouse" data-original="<%= house.FotoLarge || house.HoofdFoto;%>" />
+```
+
+##### Loading time
+[Before downsizing picture](https://github.com/ChanelZM/server-sided-funda-app/tree/master/blob/before_funda_opt.png)
+
+#### What I did
+I changed the pictures from large to medium which made loading time significantly shorter. If I had more control over the image sizes, I would compress the images even more so that the page speed would be a lot more shorter. Loading images takes the most loading time.
+
+###### The code
+```html
+<img class="pictureofhouse" data-original="<%= house.FotoMedium %>" />
+```
+
+##### Loading time
+[After downsizing picture](https://github.com/ChanelZM/server-sided-funda-app/tree/master/blob/after_funda_img.png)
+
+### Lazyload
+#### How it was
+Although the user only sees the pictures in the viewport, the browser still loads all the pictures in the html. The effect of this is that the user could see a blank page for a few seconds and the user has the feeling that loading is slow.
+
+##### Loading time
+[Before lazyload](https://github.com/ChanelZM/server-sided-funda-app/tree/master/blob/after_funda_img.png)
+
+#### What I did
+I added LazyLoader to the html. Pictures only load when they are coming closer to the viewport. The pictures in the viewport will load first leaving a feeling of instant loading.
+
+###### The code
+```html
+<script src="/js/lazyload.min.js" defer></script>
+<script src="/js/bundle.js" defer></script>
+```
+```javascript
+var myLazyLoad = new LazyLoad();
+```
+
+##### Loading time
+[After lazyload](https://github.com/ChanelZM/server-sided-funda-app/tree/master/blob/after_funda_lazy.png)

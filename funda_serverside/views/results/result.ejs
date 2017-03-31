@@ -6,7 +6,7 @@
     <div>
     <% houses.forEach(function(house){%>
       <section class="house">
-        <img class="pictureofhouse" src="<%= house.FotoLarge || house.HoofdFoto;%>" />
+        <img class="pictureofhouse" data-original="<%= house.FotoMedium || house.HoofdFoto;%>" width="400" height="220" src="<%= house.FotoMedium || house.HoofdFoto; %>" />
         <h3><a href="/house/<%= house.Id %>" class="streetandnumber"><%= house.Adres%></a></h3>
         <p class="zipcodeandcity"><%= house.Postcode%> <%= house.Woonplaats || house.Plaats;%></p>
         <p class="price"><%- house.PrijsGeformatteerdHtml || house.PrijsGeformatteerd; %></p>
@@ -22,7 +22,7 @@
       <div>
       <% teaseHouses.forEach(function(house){ %>
         <section class="house">
-          <img class="pictureofhouse" src="<%= house.FotoLarge || house.HoofdFoto; %>" />
+          <img class="pictureofhouse" data-original="<%= house.FotoMedium || house.HoofdFoto; %>" width="400" height="220" src="<%= house.FotoMedium || house.HoofdFoto; %>" />
           <h3><a href="/house/<%= house.Id %>" class="streetandnumber"><%= house.Adres%></a></h3>
           <p class="zipcodeandcity"><%= house.Postcode%> <%= house.Woonplaats || house.Plaats;%></p>
           <p class="price"><%- house.PrijsGeformatteerdHtml || house.PrijsGeformatteerd; %></p>

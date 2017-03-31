@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
     <title>Funda</title>
+    <!--<link href="/manifest.json" rel="manifest">-->
+    <!--<link  rel="stylesheet" type="text/css" href="/style/home-critical.css" />-->
     <link rel="stylesheet" type="text/css" href="/style/style.css" />
+    <script src="/js/lazyload.min.js" defer></script>
+    <script src="/js/bundle.js" defer></script>
+ <script defer>
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
 </head>
 <body>
    <header>

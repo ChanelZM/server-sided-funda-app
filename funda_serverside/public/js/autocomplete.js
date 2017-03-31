@@ -2,6 +2,11 @@ document.querySelector('#location').addEventListener('keyup', function(){
   getInput();
 });
 
+document.querySelector('.autocompletelist > ul').addEventListener('click', function(e){
+  document.querySelector('.autocompletelist').style.display = "none";
+  document.querySelector('#location').value = e.target.innerHTML;
+});
+
 function getInput(){
   var location = document.querySelector('#location').value;
   var type = document.querySelector('input[name="type"]:checked').value;
@@ -48,9 +53,3 @@ function renderAutosuggest(data){
     document.querySelector('.autocompletelist').style.display = "block";
   }
 }
-
-document.querySelector('.autocompletelist > ul').addEventListener('click', function(e){
-  document.querySelector('.autocompletelist').style.display = "none";
-  document.querySelector('#location').value = e.target.innerHTML;
-  //console.log(e.target.innerHTML);
-});
