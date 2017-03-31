@@ -77,7 +77,7 @@ The app first had big images loaded which made loading time longer.
 ```
 
 ##### Loading time
-[Before downsizing picture](https://github.com/ChanelZM/server-sided-funda-app/blob/master/before_funda_opt.png)
+![Before downsizing picture](https://github.com/ChanelZM/server-sided-funda-app/blob/master/before_funda_opt.png)
 
 #### What I did
 I changed the pictures from large to medium which made loading time significantly shorter. If I had more control over the image sizes, I would compress the images even more so that the page speed would be a lot more shorter. Loading images takes the most loading time.
@@ -88,14 +88,14 @@ I changed the pictures from large to medium which made loading time significantl
 ```
 
 ##### Loading time
-[After downsizing picture](https://github.com/ChanelZM/server-sided-funda-app/blob/master/after_funda_img.png)
+![After downsizing picture](https://github.com/ChanelZM/server-sided-funda-app/blob/master/after_funda_img.png)
 
 ### Lazyload
 #### How it was
 Although the user only sees the pictures in the viewport, the browser still loads all the pictures in the html. The effect of this is that the user could see a blank page for a few seconds and the user has the feeling that loading is slow.
 
 ##### Loading time
-[Before lazyload](https://github.com/ChanelZM/server-sided-funda-app/blob/master/after_funda_img.png)
+![Before lazyload](https://github.com/ChanelZM/server-sided-funda-app/blob/master/after_funda_img.png)
 
 #### What I did
 I added LazyLoader to the html. Pictures only load when they are coming closer to the viewport. The pictures in the viewport will load first leaving a feeling of instant loading.
@@ -110,4 +110,4 @@ var myLazyLoad = new LazyLoad();
 ```
 
 ##### Loading time
-[After lazyload](https://github.com/ChanelZM/server-sided-funda-app/tree/master/blob/after_funda_lazy.png)
+![After lazyload](https://github.com/ChanelZM/server-sided-funda-app/tree/master/blob/after_funda_lazy.png)
