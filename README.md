@@ -110,4 +110,4 @@ var myLazyLoad = new LazyLoad();
 ```
 
 ##### Loading time
-![After lazyload](https://github.com/ChanelZM/server-sided-funda-app/tree/master/blob/after_funda_lazy.png)
+![After lazyload](https://github.com/ChanelZM/server-sided-funda-app/blob/master/after_funda_lazy.png)
